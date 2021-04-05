@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+#This file was created on 4/4/2021
+
+
+printf "%187s " " " | tr " " "-"
+echo "Network DNS"
+grep "nameserver"  /etc/resolv.conf
+printf "%187s " " " | tr " " "-"
+
+echo "IP -- Netmask -- Broadcast"
+printf "%187s " " " | tr " " "="
+ifconfig | grep -m1 inet
+
+printf "%187s " " " | tr " " "="
+printf "%8s" | netstat -lnt
