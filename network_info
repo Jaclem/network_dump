@@ -9,7 +9,7 @@ printf "%187s " " " | tr " " "-"
 
 echo "IP -- Netmask -- Broadcast"
 printf "%187s " " " | tr " " "="
-ifconfig | grep -m1 inet
+ifconfig | grep 'inet [0-9\+.[0-9]\+.[0-9]\+.[0-9]\+'
 
 printf "%187s " " " | tr " " "="
 printf "%8s" | netstat -lnt
